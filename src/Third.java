@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 public class Third {
     static Scanner in = new Scanner(System.in);
@@ -28,11 +29,12 @@ public class Third {
         }
     }
     static double[][] Input(double[][] a, int n){
-        System.out.println("Введіть числа у масив");
+        System.out.println("Числа у масиві");
+        Random rand = new Random();
         for (int i=0;i<n;i++){
             for (int j=0;j<n;j++){
-                System.out.print("Array["+i+"]["+j+"]: ");
-                a[i][j] = in.nextDouble();
+                a[i][j] = Math.round(rand.nextDouble(20) * 100.0)/100.0;
+                System.out.print("Array["+i+"]["+j+"]: "+a[i][j]+"\n");
             }
         }
         return a;
