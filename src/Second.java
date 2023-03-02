@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Second{
@@ -5,10 +6,20 @@ public class Second{
     public static void Ex(){
         double[] A = new double[200], B = new double[200];
         double sum = 0;
-        int i;
+        int i, n;
         System.out.println("Завдання 2");
-        System.out.print("Введіть n: ");
-        int n = in.nextInt();
+        try {
+            System.out.print("Введіть n: ");
+            n = in.nextInt();
+            if(n<=0){
+                throw new InputMismatchException();
+            }
+        }
+        catch (InputMismatchException x) {
+            System.out.println("Ви ввели неправильне число, введіть ціле число більше нуля");
+            n = in.nextInt();
+        }
+
         for (i=0; i<n; i++){
             System.out.print("Введіть A["+i+"]: ");
             A[i] = in.nextDouble();

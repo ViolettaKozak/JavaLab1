@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 public class Third {
@@ -6,8 +7,18 @@ public class Third {
         double[][] A = new double[15][15], B = new double[15][15];
         double[] C = new double[15];
         System.out.println("Завдання 3");
-        System.out.print("Введіть розмір масивів: ");
-        int n = in.nextInt();
+        int n;
+        try {
+            System.out.print("Введіть розмір масивів: ");
+            n = in.nextInt();
+            if(n<=0){
+                throw new InputMismatchException();
+            }
+        }
+        catch (InputMismatchException x) {
+            System.out.println("Ви ввели неправильне число, введіть ціле число більше нуля");
+            n = in.nextInt();
+        }
         System.out.println("Масив А");
         Input(A, n);
         System.out.println("Масив В");
@@ -28,7 +39,7 @@ public class Third {
             System.out.print("C["+i+"]: "+ C[i]+"  ");
         }
     }
-    static double[][] Input(double[][] a, int n){
+    static void Input(double[][] a, int n){
         System.out.println("Числа у масиві");
         Random rand = new Random();
         for (int i=0;i<n;i++){
@@ -37,6 +48,5 @@ public class Third {
                 System.out.print("Array["+i+"]["+j+"]: "+a[i][j]+"\n");
             }
         }
-        return a;
     }
 }
