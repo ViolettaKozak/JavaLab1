@@ -24,7 +24,7 @@ public class Second{
         }
         System.out.println("Готовий масив B:");
         for(i=0; i<n; i++){
-            System.out.print("B["+i+"]:"+B[i] + "  ");
+            System.out.print("B["+i+"]:"+B[i] + "  \n");
         }
     }
 }

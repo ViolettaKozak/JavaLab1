@@ -8,9 +8,9 @@ public class Third {
         System.out.println("Завдання 3");
         System.out.print("Введіть розмір масивів: ");
         int n = in.nextInt();
-        System.out.println("Введіть масив А");
+        System.out.println("Масив А");
         Input(A, n);
-        System.out.println("Введіть масив В");
+        System.out.println("Масив В");
         Input(B, n);
         for(int i=0;i<n;i++){
             for(int j=0; j<n; j++){
